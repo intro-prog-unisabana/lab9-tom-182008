@@ -7,10 +7,8 @@ def main():
     while True:
         user_input = input("Enter command (A for ascent, D for descent, X to exit): ")
         
-        # .split() separa por espacios
         parts = user_input.split()
         
-       
         if not parts:
             continue
             
@@ -19,7 +17,6 @@ def main():
         if command == "X":
             break
         
-    
         elif (command == "A" or command == "D") and len(parts) > 1:
             try:
                 feet = int(parts[1])
@@ -28,12 +25,8 @@ def main():
                 else:
                     my_aircraft.descend(feet)
             except ValueError:
-                print("Invalid number of feet.")
+                pass
         
-        else:
-            print("Invalid command or missing parameters.")
-
-    
     print(f"Final altitude: {my_aircraft.altitude} feet")
 
 if __name__ == "__main__":
