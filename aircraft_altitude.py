@@ -1,11 +1,11 @@
 from aircraft import Aircraft
 
 def main():
-    model = input()  
+    model = input()
     plane = Aircraft(model)
 
     while True:
-        command = input()  
+        command = input()
         
         if command == "X":
             break
@@ -18,7 +18,7 @@ def main():
         elif action == "D":
             plane.descend(feet)
 
-    print(f"Final altitude: {plane.get_altitude()} feet")
+    print(f"Final altitude: {plane.altitude} feet")
 
 
 if __name__ == "__main__":
