@@ -7,28 +7,16 @@ def main():
     while True:
         command = input("Enter command (A for ascent, D for descent, X to exit): ")
         
-        if command.upper() == "X":
+        if command == "X":
             break
         
-        parts = command.split()
-        
-        if len(parts) != 2:
-            print("Invalid command format.")
-            continue
-        
-        action, value = parts
-        try:
-            feet = int(value)
-        except ValueError:
-            print("Invalid number of feet.")
-            continue
-        
-        if action.upper() == "A":
+        action, value = command.split()
+        feet = int(value)
+
+        if action == "A":
             plane.ascend(feet)
-        elif action.upper() == "D":
+        elif action == "D":
             plane.descend(feet)
-        else:
-            print("Unknown command.")
 
     print(f"Final altitude: {plane.get_altitude()} feet")
 
